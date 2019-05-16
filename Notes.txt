@@ -1,0 +1,8 @@
+kubectl get all
+
+kubectl create deployment myhello --image=tutum/hello-world
+kubectl expose deployment myhello --port=8020 --target-port=80 --type=NodePort
+kubectl scale --replicas=3 deployment.apps/myhello
+
+kubectl delete deployment --all
+kubectl delete service --all
